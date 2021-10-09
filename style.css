@@ -1,0 +1,37 @@
+* {
+    letter-spacing: 8px;
+    box-sizing: border-box;   
+}
+
+html {
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 30px;
+    color: #d2738a;
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(#d2738a, #542c36);
+}
+
+.container {
+    background-color: black;
+    width: 800px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    box-shadow: black 0px 5px 10px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.game-info {
+    color: #c1b492;
+    font-size: 13px;
+}
