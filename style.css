@@ -7,16 +7,11 @@ html {
     min-height: 100vh;
 }
 
-h1 {
-    font-size: 30px;
-    color: #d2738a;
-    font-family: 'Times New Roman', Times, serif;
-   
-}
 
 body {
     margin: 0;
     background: radial-gradient(#d2738a, #542c36);
+    /*background-image: url('../imagenes/bg_46.gif');*/
 }
 
 .container {
@@ -33,11 +28,18 @@ body {
     padding-bottom: 20px;
 }
 
-.info-container {
+h1 {
+    font-size: 30px;
+    color: #d2738a;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    text-align: center;
+}
+
+.game-info-container {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
-
 }
 
 .game-info {
@@ -47,15 +49,153 @@ body {
 
 .game-container {
     display: grid;
-    grid-template-columns:repeat(4, auto);
+    grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
-    margin: 50px;
+    margin: 50px auto;
     justify-content: center;
-
-
+    perspective: 500px;
 }
+
 .card {
-    background: radial-gradient(#d2738a, #542c36);
+    /*display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;*/
+    /*margin: 50px;*/
+    /*justify-content: center;*/
+    position: relative;
     height: 175px;
     width: 125px;
+    /*border-radius: 12px;*/
+}
+
+.card-face {
+    position: absolute; 
+    display: flex; 
+    width: 100%; 
+    height: 100%; 
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
+    backface-visibility: hidden; 
+    border-radius: 12px; 
+    border-width: 1px; 
+    border-style: solid; 
+    transition: transform 500ms ease-in-out; 
+    color: black; 
+}
+
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+    transform: rotateY(0);
+}
+
+/*.card.matched .card-front .card-value {
+    animation: dance 1s linear infinite 500ms;
+}*/
+
+.card-back {
+    background-color: radial-gradient(#d2738a, #542c36);
+    box-shadow: #c1b492 0px 3px 10px;
+    border-color: #c1b492;
+    transform: rotateY(0);
+    
+}
+
+.tachibana {
+    height: 100px;
+    width: 100px;
+    margin-top: 45px;
+    /*justify-content: center; /* agregue yo porque no se ajusta la imagen al tamaño de la carta*/
+
+    align-self: flex-start;
+    transform: translateY(-10px);
+    transition: transform 100ms ease-in-out;
+}
+
+.card-back:hover .tachibana {
+    transform: scale(3);
+}
+
+.card-value {
+    height: 100px;
+    width: 100px;
+    margin-top: 9px;
+    position: relative;
+    transition: transform 100ms ease-in-out;
+    transform: scale(.9);
+}
+
+.card-front:hover .card-value {
+    transform: scale(3);
+}
+
+.card-front {
+    background-color: black;
+    box-shadow: #d2738a 0px 3px 10px;
+    border-color: #d2738a;
+    transform: rotateY(180deg);
+}
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+    color: #d2738a;
+    transition: background-color 500ms, font-size 500ms;
+}
+
+.overlay-text-small {
+    font-size: 13px;
+}
+
+.overlay-text.visible {
+    display: flex;
+    /*flex-direction: column;*/
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, .8 );
+    }
+}
+
+@keyframes dance {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(-30deg);
+    }
+    75% {
+        transform: rotate(30deg);
+    }
+}
+
+/* viewport */
+
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .game-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
