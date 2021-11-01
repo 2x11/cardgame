@@ -10,8 +10,8 @@ html {
 
 body {
     margin: 0;
-    background: radial-gradient(#d2738a, #542c36);
-    /*background-image: url('../imagenes/bg_46.gif');*/
+    /*background: radial-gradient(#d2738a, #542c36);*/
+    background-image: url('../imagenes/bg_main2.gif');
 }
 
 .container {
@@ -54,6 +54,20 @@ h1 {
     margin: 50px auto;
     justify-content: center;
     perspective: 500px;
+}
+
+hr {
+	
+	border-color:#d2738a;
+	border-bottom-width:2px;
+		
+}
+
+#footer {
+	font-size:13px;
+	letter-spacing:8px;
+	margin-bottom:20px;
+    color:#c1b492
 }
 
 .card {
@@ -170,7 +184,7 @@ h1 {
         font-size: 0;
     }
     to {
-        font-size: 20px;
+        font-size: 28px;
         background-color: rgba(0, 0, 0, .8 );
     }
 }
