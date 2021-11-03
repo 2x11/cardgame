@@ -30,10 +30,14 @@ body {
 
 h1 {
     font-size: 30px;
-    color: #d2738a;
+    color: #c1b492;
     font-family: 'Times New Roman', Times, serif;
     font-weight: normal;
     text-align: center;
+}
+
+.title {
+    animation: wiredB 2s ease-in-out infinite;
 }
 
 .game-info-container {
@@ -177,6 +181,13 @@ hr {
     /*flex-direction: column;*/
     animation: overlay-grow 500ms forwards;
 }
+
+@keyframes wiredB {
+    50% {
+        color:#d2738a;
+        text-shadow:#d2738a 1px 4px 5px;
+        }
+   }
 
 @keyframes overlay-grow {
     from {
