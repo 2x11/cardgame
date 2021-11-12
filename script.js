@@ -69,17 +69,17 @@ class MixOrMatch {
     gameOver() {
         clearInterval(this.countdown);
         this.audioController.gameOver();
-        document.getElementById('game-over-text').classList.add('visible');
+        document.getElementById('game-over-text').classList.add('visible'); //classList me permite agregarle al elemento ("game-over-text") una clase nueva ("overlay- text" +'visible')
     }
     victory() {
         clearInterval(this.countdown);
         this.audioController.victory();
-        document.getElementById('victory-text').classList.add('visible');
+        document.getElementById('victory-text').classList.add('visible'); //classList me permite agregarle al elemento seleccionado una clase nueva ("overlay-text" +'visible')
     }
     hideCards() {
         this.cardsArray.forEach(card => {
-            card.classList.remove('visible');
-            card.classList.remove('matched');
+            card.classList.remove('visible'); //quito clase agregada al elemento 
+            card.classList.remove('matched'); //quito clase agregada al elemento 
         });
 
     }
