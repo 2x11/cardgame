@@ -39,6 +39,31 @@ h1 {
     text-align: center;
 }
 
+a {
+	text-decoration:none;
+	transition: color 0.5s ease-out;
+	display:inline-block;
+
+	
+	}
+	
+a:link {
+	color:#d2738a;
+	}
+	
+a:visited {
+	color:#d2738a;
+	}
+	
+a:hover {
+	color:#c1b492;
+
+	}
+	
+a:active {
+	color:#d2738a;
+	}
+
 .title {
     animation: wiredB 2s ease-in-out infinite;
 }
